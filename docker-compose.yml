@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  webapplication3:
+    image: webapplication3
+    build:
+      context: .
+      dockerfile: WebApplication3/Dockerfile
+    depends_on: 
+      - sql.data
+    
+  sql.data:
+    image: mcr.microsoft.com/mssql/server
